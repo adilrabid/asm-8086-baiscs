@@ -1,14 +1,17 @@
- ; ====== Rules for storing data ========
- ; - Data types in 8086 Assembly Language
- ; - Variable  declaration and its initialization
+ ; ===================================================
+ ; ===== Variable Declaration and Initialization ===== 
+ ; ===================================================
  
- ; We can store data as:
+ ; - Data types in 8086 Assembly Language
+ ; - Variable declaration and its initialization
+ 
+ ; ===== Data Types =====
  ; decimal      (example: 12d, 34D, 3412d)
  ; hexadecimal  (example: 1A3Dh, 34H, AD12h)
  ; binary       (example: 10b, 1101B, 01011b)
  ; character    (example: 'A', "B") Should enclosed with single/double quotes.
- ; string       (example: "Hello!! $", "Mymensingh $") A string will end on string terminator $.
-                         
+ ; string       (example: "Hello!! $", "Mymensingh $") A string will end on string terminator $.      
+                 
  ; ----------------------------------------------------------------------------------------------------------
  ; Data type/pseudo operation         Meaning             Type            Size           Range              |
  ; ----------------------------------------------------------------------------------------------------------
@@ -30,9 +33,8 @@
  ;                                                       unsigned        10 byte      0 to 2^128-1          |
  ;-----------------------------------------------------------------------------------------------------------
  
- 
  ; ===== Variable Declaration and its initialization =====
- ; Syntax: <variable name> <data> <type> <value>  
+ ; SYNTAX: <variable name> <data> <type> <value>  
  ;  
  ; For example:
  ; Age db 22
