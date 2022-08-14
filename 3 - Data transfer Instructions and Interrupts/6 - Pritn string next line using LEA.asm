@@ -36,15 +36,16 @@ main proc
     mov ds, ax          ; to load variables properly and faster from data segment to code segment.
     
     lea dx, NM     ; moves beginning address of variable 'NM' and it also prints at that memory location.
-    ; A subroutine is used to display the string.
-    ; Subroutines are used with the ah register.
-    mov ah, 09h             ; String Display subroutine is 09h
-    ; The subroutine (09h) is defined in 21h.
+ 
+    mov ah, 09h             ; String Display subroutine is 09h. ah must be used
+                            ; A subroutine is used to display the string.
+                            ; Subroutines are used with the ah register.
+                            ; The subroutine (09h) is defined in 21h.
     int 21h                 ; 21h --> DOS interrupts
     
     ; Similarly for second string
     lea dx, ID     
-    mov ah, 09h            
+    ; mov ah, 09h             ; no need to do 'mov ah, 09h' again.           
     int 21h                 
     
     mov ax, 4c00h           ; Exit. It is used to terminate program and it returns control to DOS.

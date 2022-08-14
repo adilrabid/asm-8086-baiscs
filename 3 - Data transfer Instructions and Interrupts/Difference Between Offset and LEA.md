@@ -1,0 +1,4 @@
+| Offset                                                                                                        | LEA                                                                                                                        |
+|---------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Offset holds beginning address of a variable.                                                                 | LEA is a indirect instruction in which register points to a memory location and holds the address of that memory location. |
+| However, the MOV instruction cannot be indexed because OFFSET is an  assembler directive, not an instruction. | LEA instruction can be indexed.                                                                                            |

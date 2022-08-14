@@ -27,14 +27,17 @@ main proc
     ; But we cannot do 'mov ds, data'. it will through error. (See 'Data Transfer Rules' section)
     ; So we need to split our code to do that as following
     
-    mov ax, @data       ; Set segment registers. '@' for refering
+    mov ax, @data       ; Set segment registers, must be ax. '@' for refering
     mov ds, ax          ; to load variables properly and faster from data segment to code segment.
     
     lea dx, str1     ; moves beginning address of variable 'str1' and it also prints at that memory location.
-    ; A subroutine is used to display the string.
-    ; Subroutines are used with the ah register.
-    mov ah, 09h             ; String Display subroutine is 09h
-    ; The subroutine (09h) is defined in 21h.
+                     ; For LEA, we must use a 16bit register
+                     
+    
+    mov ah, 09h             ; String Display subroutine is 09h. ah must be used, al won't work here.
+                            ; A subroutine is used to display the string.
+                            ; Subroutines are used with the ah register.
+                            ; The subroutine (09h) is defined in 21h.
     int 21h                 ; 21h --> DOS interrupts
                  
     mov ax, 4c00h           ; Exit. It is used to terminate program and it returns control to DOS.
