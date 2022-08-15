@@ -29,3 +29,6 @@
 ;       * INT 21h, Function 02h  --> Display a number or character on the screen
 ;       * INT 21h, Function 08h  --> Get Character input without Echo
 ;       * INT 21h, Function 04ch --> Terminate the code properly and return to the DOS Prompt
+;       * INT 21h, Function 0ah  --> String Input   
+
+; !!!NOTE: Normally subroutines are called with ah register.

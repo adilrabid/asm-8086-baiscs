@@ -33,20 +33,21 @@ main proc
     mov ax, @data       ; Set segment registers. ax must be used. '@' for refering
     mov ds, ax          ; to load variables properly and faster from data segment to code segment.
     
-     mov dl, offset str1     ; moves beginning address of str1
-     
-     mov ah, 09h             ; String Display subroutine is 09h, ah must be used.
-                             ; A subroutine is used to display the string.
-                             ; Subroutines are used with the ah register.
-                             ; The subroutine (09h) is defined in 21h.
-     int 21h                 ; 21h --> DOS interrupts
-     
-     mov dl, offset str2     
-     ; mov ah, 09h             ; no need to do 'mov ah, 09h' again.
-     int 21h                 
+    mov dl, offset str1     ; moves beginning address of str1
+    ; NOTE: To display data, we must use a data register.
  
-     mov ax, 4c00h           ; Exit. It is used to terminate program and it returns control to DOS.
-     int 21h
+    mov ah, 09h             ; String Display subroutine is 09h, ah must be used.
+                         ; A subroutine is used to display the string.
+                         ; Subroutines are used with the ah register.
+                         ; The subroutine (09h) is defined in 21h.
+    int 21h                 ; 21h --> DOS interrupts
+    
+    mov dl, offset str2     
+    ; mov ah, 09h             ; no need to do 'mov ah, 09h' again.
+    int 21h                 
+    
+    mov ax, 4c00h           ; Exit. It is used to terminate program and it returns control to DOS.
+    int 21h
 main endp
 ENDS                  ;end of code segment
 

@@ -34,7 +34,8 @@ main proc
     mov ax, @data       ; Set segment registers. ax must be used. '@' for refering
     mov ds, ax          ; to load variables properly and faster from data segment to code segment.
     
-     mov dl, offset str1     ; moves beginning address of str1. So the string will start printing from it's zero index.
+     mov dl, offset str1     ; moves beginning address of str1 (0x50 in this case). 
+                             ; So the string will start printing from it's zero index.
                              ; To start a string from nth index use 'offset str1+n', here n = 1,2,3 ...
     
      mov ah, 09h             ; String Display subroutine is 09h

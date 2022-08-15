@@ -6,7 +6,10 @@
 ; ===== Define Data Segment =====
 ; Declare variables, array, struct etc. initialization
 DATA SEGMENT          ;start of data segment
+    ; Regular variable
     var dw ?          ; here 'var' is the variable name, dw is data type and '?' for initializing with zero value.
+    ; to define a constant variable
+    constvar EQU 07
 ENDS                  ;end of data segment
  
 ; ===== Define Stack Segment =====
@@ -27,6 +30,7 @@ CODE SEGMENT          ;start of code segment
          ; now to check the value of 'var', we can either print the variable, or we can simplp mov it to another register to check.
          
          mov bx, var     ; observe the value of bx to verify.
+         mov bx, constvar     ; observe the value of bx to verify.
 
     main endp          ;end of main function        
 ENDS                  ;end of code segment

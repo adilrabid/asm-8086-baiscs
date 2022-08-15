@@ -4,6 +4,15 @@
 
 ; LEA: Load Effective Address loads the specified register with the offset of a memory location.
 ; Syntax: lea register, Memory Variable, Offset Memory Variable
+
+; ==== Difference of LEA and Offset instruction
+; 1) Offset holds beginning address of a variable.
+;    LEA is a indirect instruction in which register points to a memory location and holds the address 
+;    of that memory location.
+; 2) However, the MOV instruction cannot be indexed because OFFSET is an  assembler directive, not an
+;    instruction.
+;    LEA instruction can be indexed.
+
                                                          
 ; ===== Define Data Segment =====
 ; Declare variables, array, struct etc. initialization
@@ -30,9 +39,9 @@ main proc
     mov ax, @data       ; Set segment registers, must be ax. '@' for refering
     mov ds, ax          ; to load variables properly and faster from data segment to code segment.
     
-    lea dx, str1     ; moves beginning address of variable 'str1' and it also prints at that memory location.
-                     ; For LEA, we must use a 16bit register
-                     
+    lea dx, str1        ; moves beginning address of variable 'str1' and it also prints at that memory location.
+                        ; For LEA, we must use a 16bit register.
+    ; NOTE: To display data, we should use a data register.                 
     
     mov ah, 09h             ; String Display subroutine is 09h. ah must be used, al won't work here.
                             ; A subroutine is used to display the string.
