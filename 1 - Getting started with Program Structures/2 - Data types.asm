@@ -40,24 +40,3 @@
  ; Age db 22
  ; FirstName db "Adil $"
  ; Dept db 'e'
- 
-     
- DATA SEGMENT          ;start of data segment
-    ;declare variables, array, struct etc.
- ENDS                  ;end of data segment
- 
- STACK SEGMENT         ;start of stack segment
-       
- ENDS                  ;end of stack segment
- 
- CODE SEGMENT          ;start of code segment
-    main proc          ;start of main function
-        ;logic/instructions
-        
-        
-        
-        
-    main endp          ;end of main function        
- ENDS                  ;end of code segment
- 
- END MAIN             ;end of program
