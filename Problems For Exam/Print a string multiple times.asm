@@ -2,7 +2,7 @@
 
 data segment
     ; add your data here!
-    msg dw "hello there ",13,10,"$"
+    msg db "hello there",13,10,"$"
 ends
 
 code segment
