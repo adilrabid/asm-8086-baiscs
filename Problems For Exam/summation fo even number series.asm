@@ -8,5 +8,5 @@ ORG 1000H
         ADD AX,BX;
         INC BX;
         INC BX;
-        LOOP BACK;
+    LOOP BACK;
 END
